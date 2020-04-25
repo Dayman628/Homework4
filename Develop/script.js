@@ -1,9 +1,9 @@
 // This is the homework to create a quiz through dynamically updated html using js
-    var question = document.getElementById('question-spot').textContent;
-    var answerOne = document.getElementById('a1').textContent;
-    var answerTwo = document.getElementById('a2').textContent;
-    var answerThree = document.getElementById('a3').textContent;
-    var answerFour = document.getElementById('a4').textContent;
+    var question = document.querySelector('.card-header'),
+        answerOne = document.querySelector('.answer-a'),
+        answerTwo = document.querySelector('.answer-b'),
+        answerThree = document.querySelector('.answer-c'),
+        answerFour = document.querySelector('.answer-d');
 
 // create object to hold question/answer arrays
     questionOne = ["0", "1", "2", "3", "4"],
@@ -25,21 +25,27 @@
         answerThree = x[3]
         answerFour = x[4]
     };
-
-    console.log(getQuestion(questionOne));
      
     function countDown(i, callback) {
-        callback = callback  function(){};
+        callback = callback || function(){};
         var int = setInterval(function() {
-            document.getElementById("displayDiv").innerHTML = "Number: " + i;
-            i--  (clearInterval(int), callback());
-        }, 1000);
-    }
-    $("button").click(function(){
-        countDown(5, function(){
+                document.getElementById("timer").innerHTML = i;
+                i-- || (clearInterval(int), callback());
+            }, 1000);
+        }
+    
+    document.addEventListener('click', function (event) {
+
+        if (!event.target.matches('.start-quiz')) return;
+    
+        countDown(300, function(){
             alert("Time's Up!")
-        });
-    });
+        });;
+    
+        // Log the clicked element in the console
+        console.log(event.target);
+    
+    }, false);
 // create start quiz button with onclick function that calls start timer function
 
 // create while loop to run game script while timer counts down to 0
