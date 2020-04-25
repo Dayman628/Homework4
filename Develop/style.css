@@ -1,0 +1,15 @@
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.quiz-controls {
+   flex-direction: row;
+   justify-content: center;
+}
+
+button.btn {
+    width: 100px;
+    margin: 15px 20px;
+}
