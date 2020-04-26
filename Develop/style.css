@@ -5,7 +5,7 @@ body {
 #timer {
     height: 100px;
     width: 100px;
-    background: black;
+    background:green;
     color: white;
 }
 
@@ -54,8 +54,8 @@ button {
     width:50%;
     margin:auto;
     padding: 0 25px 40px 10px;
-    background-color: #1E90FF;
-    border:4px solid #B0E0E6;
+    background-color: green;
+    border:4px solid rgb(184, 33, 22);
     border-radius:5px;
     color: #FFFFFF;
     font-weight: bold;

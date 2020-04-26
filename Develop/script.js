@@ -1,5 +1,8 @@
 // This is the homework to create a quiz through dynamically updated html using js   
-    (function() {
+// Function that fires when page is loaded
+(function() {
+
+    // hold questions and answers inside object
         var questions = [{
           question: "What is 2*5?",
           choices: [2, 5, 10, 15, 20],
@@ -21,14 +24,19 @@
           choices: [20, 30, 40, 50, 64],
           correctAnswer: 4
         }];
+        // declare variables
+        var questionCounter = 0;
+        var selections = []; 
+        var quiz = $('#quiz');
         
-        var questionCounter = 0; //Tracks question number
-        var selections = []; //Array containing user choices
-        var quiz = $('#quiz'); //Quiz div object
-        
+        // start timer function
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
+           
+            //hide start button
             $('#starter').hide();
+
+
             var callback = callback || function(){
                 console.log('timer done')
             };
@@ -52,7 +60,7 @@
 
             if (!event.target.matches('.start-quiz')) return;
             
-            var fiveMinutes = 2 * 5,
+            var fiveMinutes = 2 * 30,
             display = document.querySelector('#timer');
              // Display initial question
             displayNext();
